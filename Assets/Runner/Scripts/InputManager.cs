@@ -53,7 +53,7 @@ namespace HyperCasual.Runner
                 return;
             }
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_WEBGL 
             m_InputPosition = Mouse.current.position.ReadValue();
 
             if (Mouse.current.leftButton.isPressed)

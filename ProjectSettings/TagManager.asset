@@ -7,6 +7,8 @@ TagManager:
   - HighObstacle
   - LowObstacle
   - LevelParent
+  - Score
+  - Coin
   layers:
   - Default
   - TransparentFX

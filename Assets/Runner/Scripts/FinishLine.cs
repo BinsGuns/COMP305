@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using HyperCasual.Core;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace HyperCasual.Runner
 {
@@ -13,12 +16,19 @@ namespace HyperCasual.Runner
     public class FinishLine : Spawnable
     {
         const string k_PlayerTag = "Player";
-        
+        private int score;
+
+        private void Start()
+        {
+            
+        }
+
         void OnTriggerEnter(Collider col)
         {
             if (col.CompareTag(k_PlayerTag))
             {
-                GameManager.Instance.Win();
+                PlayerPrefs.SetString("Score",GameObject.FindWithTag("Score").GetComponent<TextMeshProUGUI>().text);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
